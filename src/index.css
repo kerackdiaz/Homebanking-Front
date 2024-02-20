@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+#root{
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100vw;
+  min-height: 100vh;
+  box-sizing: content-box;
+}
+
+.slick-prev {
+  left: 25px;
+  position: absolute;
+  z-index: 999;
+}
+.slick-next {
+  right: 25px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#Client .creationDate {
+  visibility: hidden;
+}
+
+#Accounts .moreDetails {
+  display: none;
+}
+#Accounts .creationDate {
+  visibility: visible;
+  position: relative;
+  left: 65%;
+}
+
+#Accounts article * {
+  border: none;
+}
+
+#Accounts article th, #Accounts article td, #MyLoans article th, #MyLoans article td, #MyTransactions th, #MyTransactions td {
+  border: solid 2px;
+  width: 25%;
+}
+
+#MyTransactions .w-full > .w-full > div > table > thead {
+  display: none;
+  border-top: none;
+}
+
+#MyTransactions .w-full > .w-full:first-of-type > div > table > thead {
+  display: table-header-group;
+  border-top: none;
+  
+}
+
+#MyTransactions .bg-\[\#8383b5\].w-full.gap-8.py-2.px-4.bg-no-repeat.bg-center.border-gray-500.border-2.rounded-xl.flex.flex-col.items-center.justify-end.pb-1 {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#MyTransactions .w-full > .w-full > div > table > tbody > tr > td {
+  border-top: none!important;
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
