@@ -73,7 +73,7 @@ export const postLogin = async (data, dispatch) => {
 
   export const cardApply = async (data, token) => {
     try {
-      const response = await axios.post(`${baseURL}cards/current/cards`, data, { 
+      const response = await axios.post(`${baseURL}cards/current/apply`, data, { 
         headers: {
           'Authorization': `Bearer ${token}`
         }

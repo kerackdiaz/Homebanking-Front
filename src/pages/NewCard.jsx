@@ -44,12 +44,12 @@ import { useNavigate } from 'react-router-dom';
       cancelButtonColor: "#d33",
       confirmButtonText: "Accept",
     });
-  
     if (result.isConfirmed) {
+      console.log(cardColor)
+      console.log(cardType)
     const response = await cardApply({ cardColor, cardType }, token);
     if (response.success) {
       Swal.fire('Card application successful', '', 'success');
-      setTimeout(() => navigate('/cards'), 3000);
     }else{
       Swal.fire(response.message, '', 'error');
     }

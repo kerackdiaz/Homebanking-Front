@@ -60,7 +60,6 @@ const Cards = () => {
       console.log(response)
       if (response.success) {
         Swal.fire('The card has been removed', '', 'success');
-        setTimeout(() => navigate('/cards'), 3000);
       }
     } else {
       Swal.fire(
