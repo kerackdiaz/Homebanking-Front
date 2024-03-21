@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Router, Routes, Route} from 'react-router-dom';
 import MainLayout from './layout/MainLayout'
 import './App.css'
@@ -14,11 +14,18 @@ import NewCard from './pages/NewCard';
 import NewAccount from './pages/NewAccount';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const auth = useSelector((state) => state.authReducer.user.loggedIn);
+  const timeStamp = useSelector((state) => state.authReducer.user);
+
+
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const handleLogin = () => {
-    setIsLoggedIn(true);
+    if(auth===null){
+      setIsLoggedIn(true);
+    }
   };
 
   const handleLogout = () => {

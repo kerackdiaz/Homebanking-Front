@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-import ClientContext from '../utils/ClientContext';
 import loansAppli from '../assets/loansAppli.jpg';
 import { loanApply } from '../utils/Db';
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import {useNavigate} from 'react-router-dom';
+import {encrypt, descrypData} from '../utils/CryptoEnv';
 
 const NewLoans = () => {
 
