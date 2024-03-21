@@ -14,9 +14,13 @@ const NewLoans = () => {
   const [form, setForm] = useState({ name: '', accountDestination: '', amount: '', payments: '' });
   const client = useSelector((state) => state.authReducer.user )
 
+  const encryptURL = encrypt(import.meta.env.VITE_API_URL)
+  const baseURL = descrypData(encryptURL);
+
+
   useEffect(() => {
     document.title = 'New Loan - Ulver Bank';
-    axios.get(`http://localhost:8080/api/loan/types`)
+    axios.get(`${baseURL}loan/types`)
       .then(response => {
         setLoan(response.data);
       })
