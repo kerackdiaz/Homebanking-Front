@@ -31,7 +31,7 @@ const Accounts = () => {
       const { id, number, balance, creationDate } = account;
       const transactions = client.transactions.filter(transaction => transaction.accountId === id);
       return (
-        <article key={id} className=' w-full flex flex-col gap-2 bg-[#8383b5] py-5 px-2 rounded-xl min-h-screen'>
+        <article key={id} className=' w-full flex flex-col gap-2 bg-[#8383b5] py-5 px-2 rounded-xl'>
           <Account id={id} number={number} balance={balance} creationDate={creationDate} />
           <table className='w-full text-white gap-1 pb-3'>
             <thead>
@@ -53,7 +53,7 @@ const Accounts = () => {
 
   return (
     <>
-      <div id="Accounts" className='tableData bg-[#15151d] movil:w-full laptop:w-[85%] pb-20 flex content-start flex-wrap movil:h-[120vh] laptop:h-[100vh]'>
+      <div id="Accounts" className='tableData bg-[#15151d] movil:w-full laptop:w-[85%] pb-20 flex content-start flex-wrap min-h-screen'>
         <div className='flex w-full text-white py-4 laptop:h-20 movil:justify-center flex-wrap'>
           <h1 className='text-center text-3xl mb-8 movil:w-full laptop:w-4/5 '>My Accounts</h1>
           { client.accounts && client.accounts.length < 3  ? (
