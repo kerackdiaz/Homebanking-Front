@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Router, Routes, Route} from 'react-router-dom';
+import { Router, Routes, Route, useNavigate, useLocation} from 'react-router-dom';
 import MainLayout from './layout/MainLayout'
 import './App.css'
 import SideBar from './components/SideBar';
@@ -14,11 +14,13 @@ import NewCard from './pages/NewCard';
 import NewAccount from './pages/NewAccount';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const auth = useSelector((state) => state.authReducer.user.loggedIn);
-  const timeStamp = useSelector((state) => state.authReducer.user);
+  const dispatch = useDispatch();
 
 
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
@@ -30,9 +32,17 @@ function App() {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+    dispatch(logout());
 
   };
-
+useEffect(() => {
+  if(auth){
+    navigate('/')
+    console.log(auth)
+  }else{
+    navigate('/')
+  }
+},[auth])
   return (
 
       <MainLayout>
