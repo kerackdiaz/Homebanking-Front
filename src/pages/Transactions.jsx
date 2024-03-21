@@ -21,7 +21,7 @@ const Transactions = () => {
     })
   }
   return (
-<div id="MyTransactions" className='bg-[#15151d] movil:w-screen laptop:w-[85%] min-h-screen pb-20 flex movil:flex-col content-start flex-wrap'>
+<div id="MyTransactions" className='bg-[#15151d] movil:w-screen laptop:w-[85%] min-h-[85vh] order-2 pb-20 flex movil:flex-col content-start flex-wrap'>
     <div className='flex w-full text-white py-4 h-20'>
       <h1 className='text-center text-3xl mb-8 w-full'>My Transactions</h1> 
     </div>

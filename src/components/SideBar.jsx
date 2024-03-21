@@ -34,7 +34,7 @@ const handleLogout = () => {
   return (
     <>
 
-      <div id="SideBar" className="movi:w-screen laptop:flex-col movil:flex-wrap movil:h-40 laptop:h-screen movil:flex-row laptop:w-[15%] transform movil:fixed z-50 movil:top-[86vh] laptop:sticky laptop:top-0 xl:translate-x-0  ease-in-out transition duration-500 flex justify-start items-start w-full bg-[#0e0f11] flex-col">
+      <div id="SideBar" className="movi:w-screen laptop:flex-col movil:flex-wrap movil:h-40 laptop:h-screen movil:flex-row laptop:w-[15%] transform movil:order-3 laptop:order-1 z-50  laptop:sticky laptop:top-0 xl:translate-x-0  ease-in-out transition duration-500 flex justify-start items-start w-full bg-[#0e0f11] flex-col">
       <div className="mt-6 laptop:flex movil:hidden flex-row jusitfy-center items-center gap-4 text-white pl-4 movil:w-[0%] laptop:w-full border-gray-600 laptop:border-b movil:border-0 space-y-3 pb-5 ">
             <p className="movil:hidden laptop:block font-space-grotesk  leading-4  text-2xl">UlverBank</p>
             <img className="fill-stroke w-16 invert" src={Logo} alt="Logo" />
@@ -113,8 +113,8 @@ const handleLogout = () => {
                 <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-              {open ? (<div className="bg-[#0e0f11] absolute bottom-10 right-0 w-48 h-24 flex flex-col justify-center items-center space-y-8 rounded-md border border-gray-600">
-                <Link to="/profile" className="text-white text-sm leading-5 flex gap-2">
+              {open ? (<div className="bg-[#0e0f11] absolute bottom-10 right-0 w-48 h-24 flex flex-col justify-center items-center space-y-4 rounded-md border border-gray-600">
+                <Link to="/profile" className="text-white cursor-pointer text-sm leading-5 flex gap-2 hover:bg-indigo-400 w-full justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style={{width:'12px', fill:'white'}}><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
                 Profile</Link>
                 <Link to="/"  onClick={handleLogout} className="text-white cursor-pointer text-sm leading-5 flex gap-2 hover:bg-indigo-400 w-full justify-center">
