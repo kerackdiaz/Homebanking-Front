@@ -20,6 +20,16 @@ export default {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
       },
     },
+    screens: {
+      'movil': '320px',
+      
+      'tablet': '640px',
+
+      'laptop': '1024px',
+
+      'desktop': '1280px',
+
+    },
   },
   plugins: [],
 };

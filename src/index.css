@@ -49,7 +49,7 @@ body{
 }
 
 #Client .creationDate {
-  visibility: hidden;
+  display: none;
 }
 
 #Accounts .moreDetails {
@@ -61,34 +61,8 @@ body{
   left: 65%;
 }
 
-#Accounts article * {
+#Accounts article div {
   border: none;
-}
-
-#Accounts article th, #Accounts article td, #MyLoans article th, #MyLoans article td, #MyTransactions th, #MyTransactions td {
-  border: solid 2px;
-  width: 25%;
-}
-
-#MyTransactions .w-full > .w-full > div > table > thead {
-  display: none;
-  border-top: none;
-}
-
-#MyTransactions .w-full > .w-full:first-of-type > div > table > thead {
-  display: table-header-group;
-  border-top: none;
-  
-}
-
-#MyTransactions .bg-\[\#8383b5\].w-full.gap-8.py-2.px-4.bg-no-repeat.bg-center.border-gray-500.border-2.rounded-xl.flex.flex-col.items-center.justify-end.pb-1 {
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-
-#MyTransactions .w-full > .w-full > div > table > tbody > tr > td {
-  border-top: none!important;
 }
 
 .flip-card {
@@ -117,4 +91,10 @@ body{
 
 .flip-card-back {
   transform: rotateY(180deg);
+}
+
+
+div#Trasnfers form {
+  width: 80%;
+  min-height: 300px;
 }
