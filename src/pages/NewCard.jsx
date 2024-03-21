@@ -3,11 +3,9 @@ import Cards from '../components/Cards'
 import { cardApply } from '../utils/Db';
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
 
 
  const NewCard = () => {
-  const navigate = useNavigate();
   const token = useSelector((state) => state.authReducer.token.token);
   const [cardType, setCardType] = useState('');
   const [cardColor, setCardColor] = useState('');
@@ -45,9 +43,7 @@ import { useNavigate } from 'react-router-dom';
       confirmButtonText: "Accept",
     });
     if (result.isConfirmed) {
-      console.log(cardColor)
-      console.log(cardType)
-    const response = await cardApply({ cardColor, cardType }, token);
+    const response = await cardApply({ cardColor:cardColor, cardType:cardType }, token);
     if (response.success) {
       Swal.fire('Card application successful', '', 'success');
     }else{
