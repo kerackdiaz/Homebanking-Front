@@ -35,7 +35,7 @@ const handleLogout = () => {
     <>
 
       <div id="SideBar" className="movi:w-screen laptop:flex-col movil:flex-wrap movil:h-40 laptop:h-screen movil:flex-row laptop:w-[15%] transform movil:fixed z-50 movil:top-[86vh] laptop:sticky laptop:top-0 xl:translate-x-0  ease-in-out transition duration-500 flex justify-start items-start w-full bg-[#0e0f11] flex-col">
-      <div className="mt-6 laptop:flex movil:hidden flex-row movil:justify-end laptop:jusitfy-center items-center gap-4 text-white pl-4 movil:w-[0%] laptop:w-full border-gray-600 laptop:border-b movil:border-0 space-y-3 pb-5 ">
+      <div className="mt-6 laptop:flex movil:hidden flex-row jusitfy-center items-center gap-4 text-white pl-4 movil:w-[0%] laptop:w-full border-gray-600 laptop:border-b movil:border-0 space-y-3 pb-5 ">
             <p className="movil:hidden laptop:block font-space-grotesk  leading-4  text-2xl">UlverBank</p>
             <img className="fill-stroke w-16 invert" src={Logo} alt="Logo" />
         </div>
