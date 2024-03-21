@@ -58,7 +58,7 @@ import { useNavigate } from 'react-router-dom';
 
 
   return (
-<div id="NewLoan" className='bg-[#15151d] movil:w-full laptop:w-[85%] pb-20 flex content-start flex-wrap h-[100vh]'>
+<div id="NewLoan" className='bg-[#15151d] movil:w-full laptop:w-[85%] pb-20 flex content-start flex-wrap min-h-screen'>
     <div className='flex w-full text-white py-4 laptop:h-20 movil:justify-center flex-wrap'>
       <h1 className='text-center text-3xl mb-8 movil:w-full laptop:w-4/5 '>Apply for a card</h1>
       </div>

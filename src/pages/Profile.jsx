@@ -72,7 +72,7 @@ const Profile = () => {
 
   return (
     <>
-      <div id="Profile" className='bg-[#15151d] movil:w-full tablet:w-[85%] pb-20 flex content-start flex-wrap movil:h-[180vh] tablet:h-[100vh]'>
+      <div id="Profile" className='bg-[#15151d] movil:w-full tablet:w-[85%] pb-20 flex content-start flex-wrap min-h-screen'>
         <div className='flex w-full text-white py-4 tablet:h-20 movil:justify-center flex-wrap'>
           <h1 className='text-center text-3xl mb-8 movil:w-full tablet:w-4/5 '>My Profile</h1>
           <div className='flex flex-wrap'>

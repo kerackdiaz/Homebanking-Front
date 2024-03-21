@@ -82,7 +82,7 @@ const Login = ({ onLogin }) => {
 
     return (
         <>
-            <div className="flex flex-row w-full h-screen">
+            <div className="flex flex-row w-full min-h-screen">
                 <div className="w-1/2 movil:hidden laptop:flex flex flex-col justify-between h-full bg-bg-login pl-3 p-10 before:fixed before:bg-black before:w-1/2 before:h-full before:left-0 before:top-0 before:opacity-25">
                     <div className="flex flex-col text-white items-center w-52 gap-2">
                         <h1 className="text-2xl">Ulver</h1>

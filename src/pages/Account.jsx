@@ -31,7 +31,7 @@ const Accounts = () => {
       const { id, number, balance, creationDate } = account;
       const transactions = client.transactions.filter(transaction => transaction.accountId === id);
       return (
-        <article key={id} className=' w-full flex flex-col gap-2 bg-[#8383b5] py-5 px-2 rounded-xl'>
+        <article key={id} className=' w-full flex flex-col gap-2 bg-[#8383b5] py-5 px-2 rounded-xl min-h-screen'>
           <Account id={id} number={number} balance={balance} creationDate={creationDate} />
           <table className='w-full text-white gap-1 pb-3'>
             <thead>

@@ -71,7 +71,7 @@ ClientProvider()
 
   return (
     <>
-      <div id="Client" className='bg-[#15151d] movil:w-screen movil:min-h-[120vh] laptop:w-[85%] pb-20 flex content-start flex-wrap'>
+      <div id="Client" className='bg-[#15151d] movil:w-screen min-h-screen laptop:w-[85%] pb-20 flex content-start flex-wrap'>
         <div className='f w-full text-white py-4 h-20'>
           <h1 className='text-center text-3xl mb-8'> Welcome, {client.firstName}</h1>
         </div>
