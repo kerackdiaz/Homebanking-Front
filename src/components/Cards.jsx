@@ -4,7 +4,7 @@ let bg
 let bgBack
 let textColor
 let textColorBack
-export const Cards = ({ number, expiryDate, name, color, cvv }) => {
+export const Cards = ({ number, expiryDate, name, color, cvv, isExpired }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   switch (color) {
     case 'titanium':
@@ -31,13 +31,15 @@ export const Cards = ({ number, expiryDate, name, color, cvv }) => {
     setIsFlipped(!isFlipped);
   };
 
+
+  
   return (
     <div className="movil:w-full tablet:w-1/2 laptop:w-full px-5">
       <div
         className={`${isFlipped ? 'flipped ' : ''}flip-card `}
         onClick={handleFlip}
       >
-        <div className="flip-card-inner">
+        <div className={isExpired + "flip-card-inner"}>
           <div className="flip-card-front">
             <div className={bg + ' bg-cover w-full movil:h-52 laptop:h-72 bg-no-repeat bg-center border-gray-500 border-2 rounded-3xl shadow-[0_0_10px] shadow-white flex flex-col items-center justify-end movil:pb-2 laptop:pb-5 movil:gap-0 laptop:gap-1'}>
               <h2 className={'w-full movil:pl-5 laptop:pl-10 movil:text-xl laptop:text-3xl text-left ' + textColor + ' font-gemunu font-bold'}>{number}</h2>

@@ -24,7 +24,7 @@ const MyLoans = () => {
     <div id="MyLoans" className='bg-[#15151d] movil:w-full laptop:w-[85%] pb-20 flex content-start flex-wrap movil:h-[120vh] laptop:h-[100vh]'>
     <div className='flex w-full text-white py-4 laptop:h-20 movil:justify-center flex-wrap'>
       <h1 className='text-center text-3xl mb-8 movil:w-full laptop:w-4/5 '>My Loans</h1>
-        <Link to="./new" className='border-2 px-4 py-2 rounded-xl bg-[#8383b5] text-white hover:scale-105'>Apply for a new</Link>
+        <Link to="./new" className='border-2 px-4 py-2 rounded-xl bg-[#8383b5] text-white laptop:h-full hover:scale-105'>Apply for a new</Link>
       </div>
       <div className='w-full flex gap-4 px-5 movil:mt-8 laptop:m-0 '>
         <table className='w-full text-white gap-1  pb-3'>

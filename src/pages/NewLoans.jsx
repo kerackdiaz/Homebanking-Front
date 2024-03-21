@@ -5,9 +5,11 @@ import loansAppli from '../assets/loansAppli.jpg';
 import { loanApply } from '../utils/Db';
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
-
+import {useNavigate} from 'react-router-dom';
 
 const NewLoans = () => {
+
+  const navigate=useNavigate();
   const token = useSelector((state) => state.authReducer.token.token);
   const [loan, setLoan] = useState([]);
   const [selectedLoanType, setSelectedLoanType] = useState(null);
@@ -32,6 +34,17 @@ const NewLoans = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const result = await Swal.fire({
+      title: "Do you accept all terms and conditions?",
+      text: "Al apply you accept all terms and conditions",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Accept",
+    });
+
+    if (result.isConfirmed) {
     const request = await loanApply(form, token);
     if (request.success) {
       setForm({
@@ -41,10 +54,13 @@ const NewLoans = () => {
         payments: "",
       }); 
       Swal.fire('Loan application successful', '', 'success');
+      setTimeout(() => navigate('/loans'), 3000);
     } else {
       Swal.fire(request.message, '', 'error');;
+      }
     }
   };
+  
 
   const getLoansType = () => {
     if (!loan || loan.length === 0) {

@@ -3,9 +3,11 @@ import Cards from '../components/Cards'
 import { cardApply } from '../utils/Db';
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 
  const NewCard = () => {
+  const navigate = useNavigate();
   const token = useSelector((state) => state.authReducer.token.token);
   const [cardType, setCardType] = useState('');
   const [cardColor, setCardColor] = useState('');
@@ -33,14 +35,27 @@ import Swal from 'sweetalert2';
 
   const handleRequest = async (e) => {
     e.preventDefault();
-
+    const result = await Swal.fire({
+      title: "Do you accept all terms and conditions?",
+      text: "Al apply you accept all terms and conditions",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Accept",
+    });
+  
+    if (result.isConfirmed) {
     const response = await cardApply({ cardColor, cardType }, token);
     if (response.success) {
       Swal.fire('Card application successful', '', 'success');
+      setTimeout(() => navigate('/cards'), 3000);
     }else{
       Swal.fire(response.message, '', 'error');
     }
+  }
 };
+
 
   return (
 <div id="NewLoan" className='bg-[#15151d] movil:w-full laptop:w-[85%] pb-20 flex content-start flex-wrap h-[100vh]'>

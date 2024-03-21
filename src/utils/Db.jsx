@@ -4,6 +4,7 @@ import { login,current } from "../redux/actions/auth.actions";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from 'react-router-dom';
 import {encrypt, descrypData} from '../utils/CryptoEnv';
+import { useNavigate } from 'react-router-dom';
 
 const encryptURL = encrypt(import.meta.env.VITE_API_URL)
 const baseURL = descrypData(encryptURL);
@@ -18,7 +19,8 @@ export const ClientProvider = () => {
           try {
               const response = await axios.get(`${baseURL}clients/current`, { 
                 headers: {
-                  'Authorization': `Bearer ${token}`
+                  'Authorization': `Bearer ${token}`,
+                  // 'Accept': 'application/xml'
                 }
               });
               dispatchC(current(response.data))
@@ -122,6 +124,7 @@ export const postLogin = async (data, dispatch) => {
                 'Authorization': `Bearer ${token}`
             }
         });
+        console.log(response.data)
         return response.data;
     } catch (error) {
         console.error('Error during image upload:', error);
@@ -133,6 +136,22 @@ export const postLogin = async (data, dispatch) => {
   export const changePassword = async (data, token) => {
     try {
         const response = await axios.put(`${baseURL}clients/newpassword`, {data}, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error during password change:', error);
+        return { success: false, message: error.message };
+    }
+  }
+
+
+  export const deleteCard = async (id, token) => {
+    const navigate = useNavigate();
+    try {
+        const response = await axios.delete(`${baseURL}cards/current/cards/${id}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

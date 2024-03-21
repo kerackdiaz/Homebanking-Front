@@ -57,7 +57,7 @@ const Accounts = () => {
         <div className='flex w-full text-white py-4 laptop:h-20 movil:justify-center flex-wrap'>
           <h1 className='text-center text-3xl mb-8 movil:w-full laptop:w-4/5 '>My Accounts</h1>
           { client.accounts && client.accounts.length < 3  ? (
-          <Link to="./new" className='border-2 px-4 py-2 rounded-xl bg-[#8383b5] text-white hover:scale-105'>Apply for a new</Link>
+          <Link to="./new" className='border-2 px-4 py-2 rounded-xl bg-[#8383b5] text-white laptop:h-full hover:scale-105'>Apply for a new</Link>
           ) : (<div></div>)}
         </div>
         <div className='w-full flex flex-wrap gap-12 text-white py-4 px-10'>

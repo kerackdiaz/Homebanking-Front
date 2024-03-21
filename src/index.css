@@ -98,3 +98,22 @@ div#Trasnfers form {
   width: 80%;
   min-height: 300px;
 }
+
+
+
+.isExpired::after {
+  content: "Expired";
+  position: absolute;
+  background: #000000a3;
+  padding: 0 31%;
+  z-index: 999;
+  left: 0;
+  min-height: 300px;
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 48px;
+  color: white;
+  text-transform: uppercase;
+}

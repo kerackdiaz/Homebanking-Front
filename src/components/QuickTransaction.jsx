@@ -32,14 +32,26 @@ export const QuickTransaction = () => {
     e.preventDefault();
     const accountOrigin = client.accounts[selectedAccountId].number;
     const description = `Transfer from ${accountOrigin}`; 
+
+    const result = await Swal.fire({
+      title: "Verify transfer",
+      text: "Are you sure you want to make the transfer?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Confirm"
+    });
+    if (result.isConfirmed) {
     const response = await postTransfer({ accountOrigin, accountDestination, amount, description }, token);
       if (response.success === true) {
         Swal.fire('Transfer successful', '', 'success');
       } else {
         Swal.fire(response.message, '', 'error');
       }
+    }
+  };
 
-  }
   return (
 
 <form onSubmit={handleSubmit} className='bg-[#8383b5] flex-wrap text-white bg-contain  border-gray-500 border-2 rounded-xl  flex items-center justify-evenly py-2 px-3 gap-6'> 

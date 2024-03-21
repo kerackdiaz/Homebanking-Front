@@ -34,7 +34,11 @@ const handleLogout = () => {
   return (
     <>
 
-      <div id="SideBar" className="movi:w-screen movil:flex-wrap movil:h-40 laptop:h-screen movil:flex-row laptop:w-[15%] transform movil:fixed z-50 movil:top-[86vh] laptop:sticky laptop:top-0 xl:translate-x-0  ease-in-out transition duration-500 flex justify-start items-start w-full bg-[#0e0f11] flex-col">
+      <div id="SideBar" className="movi:w-screen laptop:flex-col movil:flex-wrap movil:h-40 laptop:h-screen movil:flex-row laptop:w-[15%] transform movil:fixed z-50 movil:top-[86vh] laptop:sticky laptop:top-0 xl:translate-x-0  ease-in-out transition duration-500 flex justify-start items-start w-full bg-[#0e0f11] flex-col">
+      <div className="mt-6 laptop:flex movil:hidden flex-row movil:justify-end laptop:jusitfy-center items-center gap-4 text-white pl-4 movil:w-[0%] laptop:w-full border-gray-600 laptop:border-b movil:border-0 space-y-3 pb-5 ">
+            <p className="movil:hidden laptop:block font-space-grotesk  leading-4  text-2xl">UlverBank</p>
+            <img className="fill-stroke w-16 invert" src={Logo} alt="Logo" />
+        </div>
         <div className="mt-6 flex movil:flex-row laptop:flex-col movil:justify-end laptop:pr-[43%] items-start pl-4 movil:w-[0%] laptop:w-full border-gray-600 laptop:border-b movil:border-0 space-y-3 pb-5 ">
           <Link to="/" className="flex movil:justify-end laptop:jusitfy-start items-center space-x-6 w-full  focus:outline-none  focus:text-indigo-400  text-white rounded ">
             <svg className="fill-stroke " width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +50,7 @@ const handleLogout = () => {
             <p className="text-base movil:hidden laptop:block  leading-4 ">Dashboard</p>
           </Link>
         </div>
-        <div className="flex movil:flex-row movil:border-t-2 laptop:flex-col justify-start items-center pb-4  px-6 border-b border-gray-600 w-full  ">
+        <div className="flex movil:flex-row movil:border-t-2 laptop:border-t-0 laptop:flex-col justify-start items-center pb-4  px-6 border-b border-gray-600 w-full  ">
           <span className="focus:outline-none focus:text-indigo-400 text-left  text-white flex justify-between items-center w-full py-5 space-x-14 movil:hidden laptop:block ">
             <p className="movil:hidden laptop:block text-sm leading-5  uppercase">My Products</p>
           </span>
