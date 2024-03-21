@@ -55,9 +55,9 @@ const Cards = () => {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
     });
-
     if (result.isConfirmed) {
       const response = await deleteCard(id, token);
+      console.log(response)
       if (response.success) {
         Swal.fire('The card has been removed', '', 'success');
         setTimeout(() => navigate('/cards'), 3000);

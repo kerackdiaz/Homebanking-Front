@@ -149,13 +149,13 @@ export const postLogin = async (data, dispatch) => {
 
 
   export const deleteCard = async (id, token) => {
-    const navigate = useNavigate();
     try {
         const response = await axios.delete(`${baseURL}cards/current/cards/${id}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         });
+        console.log(response.data)
         return response.data;
     } catch (error) {
         console.error('Error during password change:', error);
