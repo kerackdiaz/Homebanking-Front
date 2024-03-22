@@ -59,13 +59,14 @@ const Profile = () => {
       const url = await uploadFile(file,newId)
       const res = await changeAvatar(url, token);
       console.log(res.success)
-      if (res.success) {
+      if (res.success === true) {
         Swal.fire('Profile picture updated', '', 'success');
         navigate('/profile')
       }
-      Swal.fire('Error uploading profile picture', '', 'error');
-      navigate('/profile')
+
   }catch{
+    Swal.fire('Error uploading profile picture', '', 'error');
+    navigate('/profile')
     }
   };
 
