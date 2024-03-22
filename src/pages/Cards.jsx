@@ -33,7 +33,12 @@ const Cards = () => {
 
 
     if (!client || !client.card || client.card.length === 0) {
-      return <div>Loading...</div>;
+      return <div>
+         <div className='text-white list-decimal px-20 flex flex-col gap-5 mb-10' >
+          <p>Welcome, {client && client.firstName ? client.firstName.charAt(0).toUpperCase() + client.firstName.slice(1) : ''}!! It looks like you are a new customer or don't have a card yet. </p>
+          <h3 className='text-3xl text-center '>Apply for a new card now!</h3>
+        </div>
+      </div>;
     }
     return client.card.map(card => {
       const isExpired = currentExpiryDate > card.thruDate ? "isExpired " : "";
@@ -74,7 +79,7 @@ const Cards = () => {
   return (
     <div id="MyCard" className='bg-[#15151d] movil:w-full laptop:w-[85%] pb-20 flex content-start flex-wrap min-h-[85vh] order-2'>
       <div className='flex w-full text-white py-4 laptop:h-20 movil:justify-center flex-wrap'>
-        <h1 className='text-center text-3xl mb-8 movil:w-full laptop:w-4/5 '>My Cards</h1>
+        <h1 className='text-center text-3xl mb-8 movil:w-full laptop:w-4/5 pl-40'>My Cards</h1>
         {client.card && client.card.length < 2 ? (
           <Link to="./new" className='border-2 px-4 py-2 rounded-xl bg-[#8383b5] text-white laptop:h-full hover:scale-105'>Apply for a new</Link>
         ) : (<div></div>)}

@@ -94,7 +94,7 @@ const Login = ({ onLogin }) => {
                 </div>
                 <div className="flex flex-col p-[5%] justify-center movil:w-full laptop:w-1/2 bg-white dark:border dark:bg-gray-800 dark:border-gray-700">
                 <div className=" text-white items-center w-52 gap-2 movil:flex movil:w-full laptop:hidden justify-center">
-                        <h1 className="text-2xl">Ulver</h1>
+                        <h1 className="text-2xl font-space-grotesk">UlverBank</h1>
                         <img className="w-32 invert" src={Logo} alt="Logo Homebanking" />
                     </div>
                     {isRegistering ? (

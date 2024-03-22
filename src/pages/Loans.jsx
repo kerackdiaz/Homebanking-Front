@@ -13,7 +13,7 @@ const MyLoans = () => {
   const client = useSelector((state) => state.authReducer.user)
   const getLoans = () => {
     if (!client.loans || client.loans.length === 0) {
-      return <div>Loading...</div>
+      return <div className='loansnBlank text-[#15151d]'> .</div>
     }
     return client.loans.map(loan => {
       const { id, loanName, amount, payments } = loan;

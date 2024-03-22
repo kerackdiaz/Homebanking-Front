@@ -153,7 +153,7 @@ const Profile = () => {
               <div className='w-full'>
                 <h2 className='text-white text-center font-bold pb-7 text-2xl'>Profile Pic</h2>
                 <div className='flex flex-col gap-5 justify-center items-center'>
-                  <img className='w-1/2 border-8 rounded-lg border-indigo-400' src={client.profilePictureUrl} alt='profile' />
+                  <img className='w-[300px] h-[300px] object-cover object-center border-8 rounded-lg border-indigo-400 ' src={client.profilePictureUrl} alt='profile' />
                   <input type="file" accept="image/*" onChange={handleImageUpload} />
                 </div>
               </div>

@@ -45,7 +45,7 @@ ClientProvider()
     </div>
   }
 
-
+  const name = client.firstName
   const getLoans = () => {
     if (!client.loans || client.loans.length === 0) {
       return <div className='text-white text-center'>There are no loans to show</div>
@@ -54,7 +54,7 @@ ClientProvider()
       const { id, loanName, amount, payments } = loan;
       return <Loans key={id} id={id} loanName={loanName} amount={amount} payments={payments} />
     })
-
+    
 
   }
   const getTransactions = () => {
@@ -71,9 +71,9 @@ ClientProvider()
 
   return (
     <>
-      <div id="Client" className='bg-[#15151d] movil:w-screen min-h-full order-2 laptop:w-[85%] pb-20 flex content-start flex-wrap'>
+      <div id="Client" className='bg-[#15151d] movil:w-screen min-h-[85vh] order-2 laptop:w-[85%] pb-20 flex content-start flex-wrap'>
         <div className='f w-full text-white py-4 h-20'>
-          <h1 className='text-center text-3xl mb-8'> Welcome, {client.firstName}</h1>
+          <h1 className='text-center text-3xl mb-8'> Welcome, {client && client.firstName ? client.firstName.charAt(0).toUpperCase() + client.firstName.slice(1) : ''}</h1>
         </div>
         <div className='w-full movil:m-0 laptop:mb-10'>
           <Slider />

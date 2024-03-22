@@ -99,7 +99,7 @@ const handleLogout = () => {
           <div className=" flex justify-between items-center w-full px-3 absolute bottom-3 ">
             <div className="flex justify-center items-center space-x-2 movil:relative movil:bottom-[11vh] laptop:bottom-3 movil:left-0">
               <div>
-                <img className="rounded-full w-8" src={client.profilePictureUrl} alt="avatar" />
+                <img className="rounded-full w-9 h-9 object-cover object-center" src={client.profilePictureUrl} alt="avatar" />
               </div>
               <div className="flex justify-start flex-col items-start">
                 <p className="cursor-pointer text-sm leading-5 text-white">{client.firstName} {client.lastName}</p>

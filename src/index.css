@@ -117,3 +117,18 @@ div#Trasnfers form {
   color: white;
   text-transform: uppercase;
 }
+
+
+.transactionBlank::after {
+  content: "have no transactions recorded in this account yet";
+  position: absolute;
+  color: white;
+  max-width: 80%;
+}
+
+.loansnBlank::after {
+  content: "have no loans recorded in this account yet";
+  position: absolute;
+  color: white;
+  max-width: 80%;
+}

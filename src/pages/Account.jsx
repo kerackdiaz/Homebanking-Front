@@ -15,7 +15,7 @@ const Accounts = () => {
 
   const getTransactions = (transactions) => {
     if (!transactions || transactions.length === 0) {
-      return <div>Loading...</div>
+      return <div className='transactionBlank text-[#8383b5]'> .</div>
     }
     return transactions.map(transaction => {
       const { id, type, description, dateTime, amount } = transaction;
@@ -53,7 +53,7 @@ const Accounts = () => {
 
   return (
     <>
-      <div id="Accounts" className='tableData bg-[#15151d] movil:w-full laptop:w-[85%] pb-20 flex content-start flex-wrap min-h-full order-2'>
+      <div id="Accounts" className='tableData bg-[#15151d] movil:w-full laptop:w-[85%] pb-20 flex content-start flex-wrap min-h-[85vh] order-2'>
         <div className='flex w-full text-white py-4 laptop:h-20 movil:justify-center flex-wrap'>
           <h1 className='text-center text-3xl mb-8 movil:w-full laptop:w-4/5 '>My Accounts</h1>
           { client.accounts && client.accounts.length < 3  ? (
