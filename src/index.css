@@ -58,7 +58,6 @@ body{
 #Accounts .creationDate {
   visibility: visible;
   position: relative;
-  left: 65%;
 }
 
 #Accounts article div {
